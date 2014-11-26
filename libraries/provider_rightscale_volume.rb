@@ -826,13 +826,13 @@ class Chef
             partitions << "/dev/#{$1}de"
           end
 
-          puts 'get_next_device: partitions: ' + partitions.inspect
+          Chef::Log.info 'get_next_device: partitions: ' + partitions.inspect
 
           # The current devices are in the form of sda, hda, xvda, etc.
           if partitions.first =~ /^\/dev\/([a-z]+d)[a-z]+$/
             device_type = $1
 
-            puts "device_type 1: #{device_type}"
+            Chef::Log.info "device_type 1: #{device_type}"
 
             # Get the device letter of the last device in the list of current devices
             partitions.select do |partition|
@@ -859,7 +859,7 @@ class Chef
           elsif partitions.first =~ /^\/dev\/([a-z]+d[a-z]*)\d+$/
             device_type = $1
 
-            puts "device_type 2: #{device_type}"
+            Chef::Log.info "device_type 2: #{device_type}"
 
             partitions.select do |partition|
               partition =~ /^\/dev\/#{device_type}\d+$/
