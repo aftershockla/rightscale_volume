@@ -833,7 +833,7 @@ class Chef
             # Get the device letter of the last device in the list of current devices
             partitions.select do |partition|
               partition =~ /^\/dev\/#{device_type}[a-z]+$/
-            end.last =~ /^\/dev\/#{device_type}([a-z])[a-z]+$/
+            end.last =~ /^\/dev\/#{device_type}([a-z])[a-z]*$/
 
             last_device_letter_in_use = $1
 
