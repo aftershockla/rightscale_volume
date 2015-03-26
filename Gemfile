@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'berkshelf'
 gem 'thor-foodcritic'
 gem 'thor-scmversion'
-gem 'right_api_client'
+gem 'right_api_client', '1.5.25
 gem 'rightscale_upload', :github => 'rightscale/rightscale_upload'
 
 group :integration do
